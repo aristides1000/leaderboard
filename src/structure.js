@@ -1,4 +1,9 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-use-before-define */
+
+import { forEach } from "lodash";
+import receiveDataScore from './receive-data-from-game.js';
+import sendDataScore from './send-data-to-game.js';
 
 const structure = () => {
   const container = document.querySelector('.container');
@@ -44,6 +49,11 @@ const structure = () => {
   buttonOne.classList.add('btn', 'btn-light', 'fs-5');
   buttonOne.textContent = 'Refresh';
 
+  buttonOne.addEventListener('click', () => {
+    tbody.innerHTML = '';
+    updateTable();
+  });
+
   divThree.appendChild(buttonOne);
 
   const table = document.createElement('table');
@@ -55,75 +65,23 @@ const structure = () => {
 
   table.appendChild(tbody);
 
-  const trOne = document.createElement('tr');
+  const updateTable = async () => {
+    const scores = await receiveDataScore();
 
-  tbody.appendChild(trOne);
+    scores.forEach((row) => {
+      const tr = document.createElement('tr');
 
-  const thOne = document.createElement('th');
-  thOne.setAttribute('scope', 'row');
-  thOne.textContent = 'Name: 100';
+      tbody.appendChild(tr);
 
-  trOne.appendChild(thOne);
+      const td = document.createElement('td');
+      td.setAttribute('scope', 'row');
+      td.textContent = `${row.user}: ${row.score}`;
 
-  const trTwo = document.createElement('tr');
+      tr.appendChild(td);
+    });
+  };
 
-  tbody.appendChild(trTwo);
-
-  const thTwo = document.createElement('th');
-  thTwo.setAttribute('scope', 'row');
-  thTwo.textContent = 'Name: 20';
-
-  trTwo.appendChild(thTwo);
-
-  const trThree = document.createElement('tr');
-
-  tbody.appendChild(trThree);
-
-  const thThree = document.createElement('th');
-  thThree.setAttribute('scope', 'row');
-  thThree.textContent = 'Name: 50';
-
-  trThree.appendChild(thThree);
-
-  const trFour = document.createElement('tr');
-
-  tbody.appendChild(trFour);
-
-  const thFour = document.createElement('th');
-  thFour.setAttribute('scope', 'row');
-  thFour.textContent = 'Name: 78';
-
-  trFour.appendChild(thFour);
-
-  const trFive = document.createElement('tr');
-
-  tbody.appendChild(trFive);
-
-  const thFive = document.createElement('th');
-  thFive.setAttribute('scope', 'row');
-  thFive.textContent = 'Name: 125';
-
-  trFive.appendChild(thFive);
-
-  const trSix = document.createElement('tr');
-
-  tbody.appendChild(trSix);
-
-  const thSix = document.createElement('th');
-  thSix.setAttribute('scope', 'row');
-  thSix.textContent = 'Name: 77';
-
-  trSix.appendChild(thSix);
-
-  const trSeven = document.createElement('tr');
-
-  tbody.appendChild(trSeven);
-
-  const thSeven = document.createElement('th');
-  thSeven.setAttribute('scope', 'row');
-  thSeven.textContent = 'Name: 42';
-
-  trSeven.appendChild(thSeven);
+  updateTable();
 
   const divFour = document.createElement('div');
   divFour.classList.add('col-6');
@@ -143,7 +101,7 @@ const structure = () => {
   const inputOne = document.createElement('input');
   inputOne.setAttribute('type', 'text');
   inputOne.setAttribute('placeholder', 'Your name');
-  inputOne.setAttribute('id', 'name');
+  inputOne.setAttribute('id', 'user');
   inputOne.classList.add('form-control', 'mb-4');
 
   form.appendChild(inputOne);
@@ -167,6 +125,17 @@ const structure = () => {
   buttonTwo.textContent = 'Submit';
 
   divFive.appendChild(buttonTwo);
+
+  buttonTwo.addEventListener('click', () => {
+    const user = document.getElementById('user').value;
+    const score = document.getElementById('score').value;
+
+    if (user === '' || score === '') {
+      alert('Please fill in all fields');
+    } else {
+      sendDataScore(user, score);
+    }
+  });
 };
 
 export default structure;

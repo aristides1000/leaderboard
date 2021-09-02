@@ -15,7 +15,43 @@
 
 
 ## Getting Started
-Clone this repo on your local machine
+1. Clone this repo on your local machine
+
+2. In the path where your repository is located, you will open your terminal.
+
+3. In the path where your repository is located you are going to open your terminal and put "npm install" hit enter, after that type the command "npm start".
+
+4. Enjoy.
+
+## How did I get the API key?
+
+1. Open the developer tools of your favorite browser and go to the console tab.
+
+2. Put the following code inside the console:
+
+```
+fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
+  method: 'POST',
+  body: JSON.stringify({ name: 'Enter new game name here' }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((res) => res.json())
+  .then((json) => json.result)
+```
+
+3. Hit Enter.
+
+4. You will get the following result:
+
+```
+[[Prototype]]: Promise
+[[PromiseState]]: "fulfilled"
+[[PromiseResult]]: "Game with ID: rGmd6bUgzgGOGEjf2yGw added."
+```
+
+5. And this way you can get your API key.
 
 ### Prerequisites
 To make this repository working in your local machine you need only a browser.
