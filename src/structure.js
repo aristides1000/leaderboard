@@ -46,7 +46,7 @@ const structure = () => {
 
   const buttonOne = document.createElement('button');
   buttonOne.setAttribute('type', 'button');
-  buttonOne.classList.add('btn', 'btn-light', 'fs-5');
+  buttonOne.classList.add('btn', 'btn-light', 'fs-5', 'border', 'border-dark', 'border-5', 'rounded-0', 'shadow');
   buttonOne.textContent = 'Refresh';
 
   buttonOne.addEventListener('click', () => {
@@ -57,7 +57,7 @@ const structure = () => {
   divThree.appendChild(buttonOne);
 
   const table = document.createElement('table');
-  table.classList.add('table', 'table-striped');
+  table.classList.add('table', 'table-striped', 'border', 'border-dark', 'border-5');
 
   divTwo.appendChild(table);
 
@@ -102,7 +102,7 @@ const structure = () => {
   inputOne.setAttribute('type', 'text');
   inputOne.setAttribute('placeholder', 'Your name');
   inputOne.setAttribute('id', 'user');
-  inputOne.classList.add('form-control', 'mb-4');
+  inputOne.classList.add('form-control', 'mb-4', 'border', 'border-dark', 'border-5', 'rounded-0');
 
   form.appendChild(inputOne);
 
@@ -110,7 +110,7 @@ const structure = () => {
   inputTwo.setAttribute('type', 'number');
   inputTwo.setAttribute('placeholder', 'Your score');
   inputTwo.setAttribute('id', 'score');
-  inputTwo.classList.add('form-control', 'mb-4');
+  inputTwo.classList.add('form-control', 'mb-4', 'border', 'border-dark', 'border-5', 'rounded-0');
 
   form.appendChild(inputTwo);
 
@@ -121,7 +121,7 @@ const structure = () => {
 
   const buttonTwo = document.createElement('button');
   buttonTwo.setAttribute('type', 'button');
-  buttonTwo.classList.add('btn', 'btn-light', 'fs-5');
+  buttonTwo.classList.add('btn', 'btn-light', 'fs-5', 'border', 'border-dark', 'border-5', 'rounded-0', 'shadow');
   buttonTwo.textContent = 'Submit';
 
   divFive.appendChild(buttonTwo);
