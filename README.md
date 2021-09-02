@@ -43,7 +43,6 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
 
 3. Hit Enter.
 
-4. You will get the following result:
 
 ```
 [[Prototype]]: Promise
@@ -51,7 +50,7 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
 [[PromiseResult]]: "Game with ID: rGmd6bUgzgGOGEjf2yGw added."
 ```
 
-5. And this way you can get your API key.
+5. And this way you can get your API key 🥳🥳🥳.
 
 ### Prerequisites
 To make this repository working in your local machine you need only a browser.
