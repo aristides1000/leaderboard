@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-alert */
 /* eslint-disable no-use-before-define */
 
-import { forEach } from "lodash";
 import receiveDataScore from './receive-data-from-game.js';
 import sendDataScore from './send-data-to-game.js';
 
