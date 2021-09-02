@@ -52,7 +52,7 @@ const structure = () => {
   divTwo.appendChild(table);
 
   const tbody = document.createElement('tbody');
-  
+
   table.appendChild(tbody);
 
   const trOne = document.createElement('tr');
