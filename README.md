@@ -11,7 +11,7 @@
 - ESLint
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/aristides1000/leaderboard/development/dist/index.html)
+[Live Demo Link](https://raw.githack.com/aristides1000/leaderboard/final-touches/dist/index.html)
 
 
 ## Getting Started
